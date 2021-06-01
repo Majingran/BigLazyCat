@@ -19,9 +19,9 @@ router.beforeEach(async(to, from, next) => {
 
   // determine whether the user has logged in
   const hasToken = getToken()
-
   if (hasToken) {
     if (to.path === '/login') {
+      console.log('permission:25', to.path)
       // if is logged in, redirect to the home page
       next({ path: '/' })
       NProgress.done()
